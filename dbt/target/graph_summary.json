@@ -1,1 +1,0 @@
-{"_invocation_id": "17c37f05-1da8-4e3f-a6a3-707b002ef19a", "linked": {"0": {"name": "model.elt_assignment.customers_raw", "type": "model"}, "1": {"name": "model.elt_assignment.customers_clean", "type": "model", "succ": [2]}, "2": {"name": "model.elt_assignment.dim_customers", "type": "model"}}}

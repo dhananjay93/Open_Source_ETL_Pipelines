@@ -25,11 +25,11 @@ SELECT
     WHEN LOWER(COALESCE(techsupport, '')) = 'yes' THEN TRUE
     WHEN LOWER(COALESCE(techsupport, '')) = 'no'  THEN FALSE
     ELSE NULL
-  END                                                AS has_tech_support,
+  END  AS has_tech_support,
   CASE 
     WHEN LOWER(COALESCE(churn, '')) = 'yes' THEN TRUE
     WHEN LOWER(COALESCE(churn, '')) = 'no'  THEN FALSE
     ELSE NULL
-  END                                                AS is_churned,
-  CURRENT_TIMESTAMP                                  AS _loaded_at
+  END  AS is_churned,
+  CURRENT_TIMESTAMP AS _loaded_at
 FROM b

@@ -1,0 +1,25 @@
+[2025-09-06T16:37:19.754+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-06T16:37:19.802+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: load_customers_to_postgres.wait_for_csv manual__2025-09-06T16:37:18.166247+00:00 [queued]>
+[2025-09-06T16:37:19.812+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: load_customers_to_postgres.wait_for_csv manual__2025-09-06T16:37:18.166247+00:00 [queued]>
+[2025-09-06T16:37:19.819+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-09-06T16:37:19.846+0000] {taskinstance.py:2330} INFO - Executing <Task(FileSensor): wait_for_csv> on 2025-09-06 16:37:18.166247+00:00
+[2025-09-06T16:37:19.854+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=4207) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-09-06T16:37:19.853+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'load_customers_to_postgres', 'wait_for_csv', 'manual__2025-09-06T16:37:18.166247+00:00', '--job-id', '78', '--raw', '--subdir', 'DAGS_FOLDER/load_customers_to_postgres.py', '--cfg-path', '/tmp/tmpd6tanb93']
+[2025-09-06T16:37:19.856+0000] {standard_task_runner.py:64} INFO - Started process 4209 to run task
+[2025-09-06T16:37:19.856+0000] {standard_task_runner.py:91} INFO - Job 78: Subtask wait_for_csv
+[2025-09-06T16:37:19.894+0000] {task_command.py:426} INFO - Running <TaskInstance: load_customers_to_postgres.wait_for_csv manual__2025-09-06T16:37:18.166247+00:00 [running]> on host dd8e0e853e24
+[2025-09-06T16:37:19.975+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='etl' AIRFLOW_CTX_DAG_ID='load_customers_to_postgres' AIRFLOW_CTX_TASK_ID='wait_for_csv' AIRFLOW_CTX_EXECUTION_DATE='2025-09-06T16:37:18.166247+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-06T16:37:18.166247+00:00'
+[2025-09-06T16:37:19.977+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-06T16:37:19.977+0000] {baseoperator.py:400} WARNING - FileSensor.execute cannot be called outside TaskInstance!
+[2025-09-06T16:37:19.979+0000] {crypto.py:82} WARNING - empty cryptography key - values will not be stored encrypted.
+[2025-09-06T16:37:19.979+0000] {base.py:84} INFO - Using connection ID 'fs_default' for task execution.
+[2025-09-06T16:37:19.980+0000] {filesystem.py:85} INFO - Poking for file /opt/***/data/customer_churn_data.csv
+[2025-09-06T16:37:19.980+0000] {filesystem.py:89} INFO - Found File /opt/***/data/customer_churn_data.csv last modified: 20250906163240
+[2025-09-06T16:37:19.981+0000] {base.py:294} INFO - Success criteria met. Exiting.
+[2025-09-06T16:37:19.981+0000] {filesystem.py:85} INFO - Poking for file /opt/***/data/customer_churn_data.csv
+[2025-09-06T16:37:19.981+0000] {filesystem.py:89} INFO - Found File /opt/***/data/customer_churn_data.csv last modified: 20250906163240
+[2025-09-06T16:37:19.981+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-06T16:37:19.988+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=load_customers_to_postgres, task_id=wait_for_csv, run_id=manual__2025-09-06T16:37:18.166247+00:00, execution_date=20250906T163718, start_date=20250906T163719, end_date=20250906T163719
+[2025-09-06T16:37:20.040+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-09-06T16:37:20.064+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-09-06T16:37:20.065+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

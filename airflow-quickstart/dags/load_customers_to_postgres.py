@@ -8,6 +8,7 @@ from airflow.decorators import task
 from airflow.models.baseoperator import chain
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.sensors.filesystem import FileSensor
+from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 
 
 DATA_DIR = os.getenv("CUSTOMERS_DATA_DIR", "/opt/airflow/data")
@@ -107,6 +108,13 @@ with DAG(
     @task(trigger_rule="all_success")
     def print_success():
         print("✅ DAG run completed successfully: load_customers_to_postgres")
+
+    trigger_dbt = TriggerDagRunOperator(
+        task_id="trigger_dbt_transformations",
+        trigger_dag_id="dbt_transformations",
+        reset_dag_run=True, 
+        wait_for_completion=False,
+    )
 
     chain(
         show_filepath(),
