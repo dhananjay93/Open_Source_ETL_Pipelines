@@ -1,0 +1,19 @@
+name: "elt_assignment"
+version: "1.0"
+config-version: 2
+
+profile: "elt_assignment"
+
+model-paths: ["models"]
+
+models:
+  elt_assignment:
+    bronze:
+      +schema: bronze
+      +materialized: table
+    silver:
+      +schema: silver
+      +materialized: table
+    gold:
+      +schema: gold
+      +materialized: table

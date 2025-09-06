@@ -1,0 +1,12 @@
+elt_assignment:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('DBT_PG_HOST', 'postgres') }}"   # service name from docker-compose, not localhost
+      user: airflow
+      password: airflow
+      port: 5432
+      dbname: airflow
+      schema: airflow
+      threads: 4

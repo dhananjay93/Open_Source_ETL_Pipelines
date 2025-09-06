@@ -1,0 +1,36 @@
+[2025-09-06T09:30:42.730+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-06T09:30:42.760+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_transformations.dbt_deps manual__2025-09-06T09:30:41.560644+00:00 [queued]>
+[2025-09-06T09:30:42.765+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_transformations.dbt_deps manual__2025-09-06T09:30:41.560644+00:00 [queued]>
+[2025-09-06T09:30:42.766+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-09-06T09:30:42.775+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_deps> on 2025-09-06 09:30:41.560644+00:00
+[2025-09-06T09:30:42.786+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=254) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-09-06T09:30:42.785+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_transformations', 'dbt_deps', 'manual__2025-09-06T09:30:41.560644+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/dbt_transformations.py', '--cfg-path', '/tmp/tmpw4izx0pc']
+[2025-09-06T09:30:42.787+0000] {standard_task_runner.py:64} INFO - Started process 257 to run task
+[2025-09-06T09:30:42.787+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask dbt_deps
+[2025-09-06T09:30:42.822+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_transformations.dbt_deps manual__2025-09-06T09:30:41.560644+00:00 [running]> on host b76737f3cbe6
+[2025-09-06T09:30:42.875+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='etl' AIRFLOW_CTX_DAG_ID='dbt_transformations' AIRFLOW_CTX_TASK_ID='dbt_deps' AIRFLOW_CTX_EXECUTION_DATE='2025-09-06T09:30:41.560644+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-06T09:30:41.560644+00:00'
+[2025-09-06T09:30:42.875+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-06T09:30:42.887+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-09-06T09:30:42.888+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt && DBT_PROFILES_DIR="/opt/***/dbt/profiles" python -m dbt deps']
+[2025-09-06T09:30:42.895+0000] {subprocess.py:86} INFO - Output:
+[2025-09-06T09:30:43.028+0000] {subprocess.py:93} INFO - /home/***/.local/bin/python: No module named dbt.__main__; 'dbt' is a package and cannot be directly executed
+[2025-09-06T09:30:43.032+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-09-06T09:30:43.033+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-06T09:30:43.040+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-09-06T09:30:43.044+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=dbt_transformations, task_id=dbt_deps, run_id=manual__2025-09-06T09:30:41.560644+00:00, execution_date=20250906T093041, start_date=20250906T093042, end_date=20250906T093043
+[2025-09-06T09:30:43.052+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 10 for task dbt_deps (Bash command failed. The command returned a non-zero exit code 1.; 257)
+[2025-09-06T09:30:43.093+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-09-06T09:30:43.101+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

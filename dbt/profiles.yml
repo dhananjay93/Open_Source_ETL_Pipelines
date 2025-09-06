@@ -1,0 +1,12 @@
+elt_assignment:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: localhost   # service name from docker-compose, not localhost
+      user: postgres
+      password: postgres
+      port: 5432
+      dbname: staging
+      schema: public
+      threads: 4

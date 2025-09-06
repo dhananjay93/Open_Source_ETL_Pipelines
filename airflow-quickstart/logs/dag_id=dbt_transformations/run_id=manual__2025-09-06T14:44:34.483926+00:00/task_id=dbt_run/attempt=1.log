@@ -1,0 +1,63 @@
+[2025-09-06T14:44:44.896+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-06T14:44:44.916+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_transformations.dbt_run manual__2025-09-06T14:44:34.483926+00:00 [queued]>
+[2025-09-06T14:44:44.920+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_transformations.dbt_run manual__2025-09-06T14:44:34.483926+00:00 [queued]>
+[2025-09-06T14:44:44.920+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-09-06T14:44:44.926+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_run> on 2025-09-06 14:44:34.483926+00:00
+[2025-09-06T14:44:44.931+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_transformations', 'dbt_run', 'manual__2025-09-06T14:44:34.483926+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/dbt_transformations.py', '--cfg-path', '/tmp/tmp6zcx47uv']
+[2025-09-06T14:44:44.934+0000] {standard_task_runner.py:91} INFO - Job 27: Subtask dbt_run
+[2025-09-06T14:44:44.933+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=2407) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-09-06T14:44:44.935+0000] {standard_task_runner.py:64} INFO - Started process 2408 to run task
+[2025-09-06T14:44:44.963+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_transformations.dbt_run manual__2025-09-06T14:44:34.483926+00:00 [running]> on host dd8e0e853e24
+[2025-09-06T14:44:45.005+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_transformations' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-09-06T14:44:34.483926+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-06T14:44:34.483926+00:00'
+[2025-09-06T14:44:45.006+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-06T14:44:45.014+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-09-06T14:44:45.014+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'export PATH="$PATH:/home/***/.local/bin" && cd /opt/***/dbt && DBT_PROFILES_DIR="/opt/***/dbt" dbt run --project-dir . --profiles-dir "/opt/***/dbt"']
+[2025-09-06T14:44:45.019+0000] {subprocess.py:86} INFO - Output:
+[2025-09-06T14:44:46.215+0000] {subprocess.py:93} INFO - [0m14:44:46  Running with dbt=1.10.11
+[2025-09-06T14:44:46.348+0000] {subprocess.py:93} INFO - [0m14:44:46  Registered adapter: postgres=1.8.2
+[2025-09-06T14:44:46.702+0000] {subprocess.py:93} INFO - [0m14:44:46  Found 3 models, 1 source, 550 macros
+[2025-09-06T14:44:46.706+0000] {subprocess.py:93} INFO - [0m14:44:46
+[2025-09-06T14:44:46.707+0000] {subprocess.py:93} INFO - [0m14:44:46  Concurrency: 4 threads (target='dev')
+[2025-09-06T14:44:46.708+0000] {subprocess.py:93} INFO - [0m14:44:46
+[2025-09-06T14:44:46.843+0000] {subprocess.py:93} INFO - [0m14:44:46  1 of 3 START sql table model gold.customer_360 ................................. [RUN]
+[2025-09-06T14:44:46.844+0000] {subprocess.py:93} INFO - [0m14:44:46  2 of 3 START sql table model silver.customers_clean ............................ [RUN]
+[2025-09-06T14:44:46.844+0000] {subprocess.py:93} INFO - [0m14:44:46  3 of 3 START sql table model bronze.customers_raw .............................. [RUN]
+[2025-09-06T14:44:46.925+0000] {subprocess.py:93} INFO - [0m14:44:46  1 of 3 ERROR creating sql table model gold.customer_360 ........................ [[31mERROR[0m in 0.08s]
+[2025-09-06T14:44:46.958+0000] {subprocess.py:93} INFO - [0m14:44:46  2 of 3 OK created sql table model silver.customers_clean ....................... [[32mSELECT 1000[0m in 0.11s]
+[2025-09-06T14:44:46.962+0000] {subprocess.py:93} INFO - [0m14:44:46  3 of 3 OK created sql table model bronze.customers_raw ......................... [[32mSELECT 1000[0m in 0.12s]
+[2025-09-06T14:44:46.970+0000] {subprocess.py:93} INFO - [0m14:44:46
+[2025-09-06T14:44:46.970+0000] {subprocess.py:93} INFO - [0m14:44:46  Finished running 3 table models in 0 hours 0 minutes and 0.26 seconds (0.26s).
+[2025-09-06T14:44:47.047+0000] {subprocess.py:93} INFO - [0m14:44:47
+[2025-09-06T14:44:47.048+0000] {subprocess.py:93} INFO - [0m14:44:47  [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[2025-09-06T14:44:47.048+0000] {subprocess.py:93} INFO - [0m14:44:47
+[2025-09-06T14:44:47.049+0000] {subprocess.py:93} INFO - [0m14:44:47  [31mFailure in model customer_360 (models/gold/customer_360.sql)[0m
+[2025-09-06T14:44:47.049+0000] {subprocess.py:93} INFO - [0m14:44:47    Database Error in model customer_360 (models/gold/customer_360.sql)
+[2025-09-06T14:44:47.050+0000] {subprocess.py:93} INFO -   syntax error at or near ";"
+[2025-09-06T14:44:47.050+0000] {subprocess.py:93} INFO -   LINE 59: FROM "silver"."customers_clean" AS cc;
+[2025-09-06T14:44:47.050+0000] {subprocess.py:93} INFO -                                                 ^
+[2025-09-06T14:44:47.050+0000] {subprocess.py:93} INFO -   compiled code at target/run/elt_assignment/models/gold/customer_360.sql
+[2025-09-06T14:44:47.050+0000] {subprocess.py:93} INFO - [0m14:44:47
+[2025-09-06T14:44:47.051+0000] {subprocess.py:93} INFO - [0m14:44:47    compiled code at target/compiled/elt_assignment/models/gold/customer_360.sql
+[2025-09-06T14:44:47.051+0000] {subprocess.py:93} INFO - [0m14:44:47
+[2025-09-06T14:44:47.051+0000] {subprocess.py:93} INFO - [0m14:44:47  Done. PASS=2 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=3
+[2025-09-06T14:44:48.730+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-09-06T14:44:48.731+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-06T14:44:48.742+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-09-06T14:44:48.745+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=dbt_transformations, task_id=dbt_run, run_id=manual__2025-09-06T14:44:34.483926+00:00, execution_date=20250906T144434, start_date=20250906T144444, end_date=20250906T144448
+[2025-09-06T14:44:48.754+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 27 for task dbt_run (Bash command failed. The command returned a non-zero exit code 1.; 2408)
+[2025-09-06T14:44:48.804+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-09-06T14:44:48.820+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-06T14:44:48.824+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,50 @@
+[2025-09-06T14:52:28.873+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-06T14:52:28.889+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt_transformations.dbt_run manual__2025-09-06T14:52:19.124475+00:00 [queued]>
+[2025-09-06T14:52:28.892+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt_transformations.dbt_run manual__2025-09-06T14:52:19.124475+00:00 [queued]>
+[2025-09-06T14:52:28.893+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-09-06T14:52:28.898+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_run> on 2025-09-06 14:52:19.124475+00:00
+[2025-09-06T14:52:28.903+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'dbt_transformations', 'dbt_run', 'manual__2025-09-06T14:52:19.124475+00:00', '--job-id', '35', '--raw', '--subdir', 'DAGS_FOLDER/dbt_transformations.py', '--cfg-path', '/tmp/tmp5r_xa8i7']
+[2025-09-06T14:52:28.907+0000] {standard_task_runner.py:91} INFO - Job 35: Subtask dbt_run
+[2025-09-06T14:52:28.907+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=2799) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-09-06T14:52:28.909+0000] {standard_task_runner.py:64} INFO - Started process 2800 to run task
+[2025-09-06T14:52:28.935+0000] {task_command.py:426} INFO - Running <TaskInstance: dbt_transformations.dbt_run manual__2025-09-06T14:52:19.124475+00:00 [running]> on host dd8e0e853e24
+[2025-09-06T14:52:28.976+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt_transformations' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-09-06T14:52:19.124475+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-06T14:52:19.124475+00:00'
+[2025-09-06T14:52:28.977+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-06T14:52:28.984+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-09-06T14:52:28.984+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'export PATH="$PATH:/home/***/.local/bin" && cd /opt/***/dbt && DBT_PROFILES_DIR="/opt/***/dbt" dbt run --project-dir . --profiles-dir "/opt/***/dbt"']
+[2025-09-06T14:52:28.989+0000] {subprocess.py:86} INFO - Output:
+[2025-09-06T14:52:30.223+0000] {subprocess.py:93} INFO - [0m14:52:30  Running with dbt=1.10.11
+[2025-09-06T14:52:30.360+0000] {subprocess.py:93} INFO - [0m14:52:30  Registered adapter: postgres=1.8.2
+[2025-09-06T14:52:30.614+0000] {subprocess.py:93} INFO - [0m14:52:30  [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+[2025-09-06T14:52:30.615+0000] {subprocess.py:93} INFO - functionality
+[2025-09-06T14:52:30.615+0000] {subprocess.py:93} INFO - Found top-level arguments to test `accepted_values`. Arguments to generic tests
+[2025-09-06T14:52:30.615+0000] {subprocess.py:93} INFO - should be nested under the `arguments` property.`
+[2025-09-06T14:52:30.756+0000] {subprocess.py:93} INFO - [0m14:52:30  Found 3 models, 7 data tests, 1 source, 550 macros
+[2025-09-06T14:52:30.758+0000] {subprocess.py:93} INFO - [0m14:52:30
+[2025-09-06T14:52:30.758+0000] {subprocess.py:93} INFO - [0m14:52:30  Concurrency: 4 threads (target='dev')
+[2025-09-06T14:52:30.758+0000] {subprocess.py:93} INFO - [0m14:52:30
+[2025-09-06T14:52:30.852+0000] {subprocess.py:93} INFO - [0m14:52:30  1 of 3 START sql table model gold.customer_360 ................................. [RUN]
+[2025-09-06T14:52:30.853+0000] {subprocess.py:93} INFO - [0m14:52:30  2 of 3 START sql table model silver.customers_clean ............................ [RUN]
+[2025-09-06T14:52:30.853+0000] {subprocess.py:93} INFO - [0m14:52:30  3 of 3 START sql table model bronze.customers_raw .............................. [RUN]
+[2025-09-06T14:52:30.998+0000] {subprocess.py:93} INFO - [0m14:52:30  1 of 3 OK created sql table model gold.customer_360 ............................ [[32mSELECT 1000[0m in 0.14s]
+[2025-09-06T14:52:31.003+0000] {subprocess.py:93} INFO - [0m14:52:31  2 of 3 OK created sql table model silver.customers_clean ....................... [[32mSELECT 1000[0m in 0.15s]
+[2025-09-06T14:52:31.011+0000] {subprocess.py:93} INFO - [0m14:52:31  3 of 3 OK created sql table model bronze.customers_raw ......................... [[32mSELECT 1000[0m in 0.16s]
+[2025-09-06T14:52:31.021+0000] {subprocess.py:93} INFO - [0m14:52:31
+[2025-09-06T14:52:31.021+0000] {subprocess.py:93} INFO - [0m14:52:31  Finished running 3 table models in 0 hours 0 minutes and 0.26 seconds (0.26s).
+[2025-09-06T14:52:31.054+0000] {subprocess.py:93} INFO - [0m14:52:31
+[2025-09-06T14:52:31.055+0000] {subprocess.py:93} INFO - [0m14:52:31  [32mCompleted successfully[0m
+[2025-09-06T14:52:31.055+0000] {subprocess.py:93} INFO - [0m14:52:31
+[2025-09-06T14:52:31.055+0000] {subprocess.py:93} INFO - [0m14:52:31  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=3
+[2025-09-06T14:52:31.056+0000] {subprocess.py:93} INFO - [0m14:52:31  [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+[2025-09-06T14:52:31.056+0000] {subprocess.py:93} INFO - Summary of encountered deprecations:
+[2025-09-06T14:52:31.056+0000] {subprocess.py:93} INFO - - MissingArgumentsPropertyInGenericTestDeprecation: 5 occurrences
+[2025-09-06T14:52:31.056+0000] {subprocess.py:93} INFO - To see all deprecation instances instead of just the first occurrence of each,
+[2025-09-06T14:52:31.056+0000] {subprocess.py:93} INFO - run command again with the `--show-all-deprecations` flag. You may also need to
+[2025-09-06T14:52:31.056+0000] {subprocess.py:93} INFO - run with `--no-partial-parse` as some deprecations are only encountered during
+[2025-09-06T14:52:31.056+0000] {subprocess.py:93} INFO - parsing.
+[2025-09-06T14:52:32.768+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-09-06T14:52:32.769+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-06T14:52:32.783+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=dbt_transformations, task_id=dbt_run, run_id=manual__2025-09-06T14:52:19.124475+00:00, execution_date=20250906T145219, start_date=20250906T145228, end_date=20250906T145232
+[2025-09-06T14:52:32.833+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 0
+[2025-09-06T14:52:32.848+0000] {taskinstance.py:3503} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-09-06T14:52:32.849+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

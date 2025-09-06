@@ -1,0 +1,160 @@
+[2025-09-06T07:43:45.407+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-09-06T07:43:45.425+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: load_customers_to_postgres.wait_for_csv manual__2025-09-06T07:43:43.092994+00:00 [queued]>
+[2025-09-06T07:43:45.429+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: load_customers_to_postgres.wait_for_csv manual__2025-09-06T07:43:43.092994+00:00 [queued]>
+[2025-09-06T07:43:45.429+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-09-06T07:43:45.434+0000] {taskinstance.py:2330} INFO - Executing <Task(FileSensor): wait_for_csv> on 2025-09-06 07:43:43.092994+00:00
+[2025-09-06T07:43:45.440+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=186) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-09-06T07:43:45.441+0000] {standard_task_runner.py:64} INFO - Started process 187 to run task
+[2025-09-06T07:43:45.440+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'load_customers_to_postgres', 'wait_for_csv', 'manual__2025-09-06T07:43:43.092994+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/load_customers_to_postgres.py', '--cfg-path', '/tmp/tmp50v7frkv']
+[2025-09-06T07:43:45.442+0000] {standard_task_runner.py:91} INFO - Job 3: Subtask wait_for_csv
+[2025-09-06T07:43:45.467+0000] {task_command.py:426} INFO - Running <TaskInstance: load_customers_to_postgres.wait_for_csv manual__2025-09-06T07:43:43.092994+00:00 [running]> on host d3743a3a0ea9
+[2025-09-06T07:43:45.503+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='etl' AIRFLOW_CTX_DAG_ID='load_customers_to_postgres' AIRFLOW_CTX_TASK_ID='wait_for_csv' AIRFLOW_CTX_EXECUTION_DATE='2025-09-06T07:43:43.092994+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-09-06T07:43:43.092994+00:00'
+[2025-09-06T07:43:45.503+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-09-06T07:43:45.504+0000] {baseoperator.py:400} WARNING - FileSensor.execute cannot be called outside TaskInstance!
+[2025-09-06T07:43:45.508+0000] {base.py:84} INFO - Using connection ID 'fs_default' for task execution.
+[2025-09-06T07:43:45.508+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:44:15.511+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:44:45.520+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:45:15.523+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:45:45.528+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:46:15.533+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:46:45.535+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:47:15.544+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:47:45.552+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:48:15.555+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:48:45.565+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:49:15.576+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:49:45.594+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:50:15.599+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:50:45.602+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:51:15.610+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:51:45.613+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:52:15.616+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:52:45.637+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:53:15.644+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:53:45.660+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:54:15.672+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:54:45.681+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:55:15.698+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:55:45.715+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:56:15.718+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:56:45.722+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:57:15.728+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:57:45.744+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:58:15.748+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:58:45.754+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:59:15.760+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T07:59:45.767+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:00:15.776+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:00:45.783+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:01:15.790+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:01:45.795+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:02:15.804+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:02:45.817+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:03:15.822+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:03:45.830+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:04:15.846+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:04:45.852+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:05:15.865+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:05:45.878+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:06:15.890+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:06:45.895+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:07:15.900+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:07:45.911+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:08:15.920+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:08:45.924+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:09:15.935+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:09:45.943+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:10:15.946+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:10:45.955+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:11:15.969+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:11:45.979+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:12:15.982+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:12:46.003+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:13:16.013+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:13:46.026+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:14:16.031+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:14:46.037+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:15:16.042+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:15:46.051+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:16:16.058+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:16:46.067+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:17:16.083+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:17:46.100+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:18:16.111+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:18:46.124+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:19:16.143+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:19:46.163+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:20:16.175+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:20:46.184+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:21:16.191+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:21:46.206+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:22:16.221+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:22:46.235+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:23:16.248+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:23:46.264+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:24:16.273+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:24:46.287+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:25:16.292+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:25:46.298+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:26:16.304+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:26:46.316+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:27:16.331+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:27:46.345+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:28:16.362+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:28:46.371+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:29:16.378+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:29:46.388+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:30:16.401+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:30:46.418+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:31:16.433+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:31:46.444+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:32:16.450+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:32:46.459+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:33:16.463+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:33:46.472+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:34:16.475+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:34:46.486+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:35:16.492+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:35:46.500+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:36:16.506+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:36:46.539+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:37:16.547+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:37:46.555+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:38:16.564+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:38:46.580+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:39:16.600+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:39:46.612+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:40:16.629+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:40:46.642+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:41:16.662+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:41:46.681+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:42:16.696+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:42:46.716+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:43:16.725+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:43:46.738+0000] {filesystem.py:85} INFO - Poking for file /data/customer_churn_data.csv
+[2025-09-06T08:43:46.749+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-09-06T08:43:46.755+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/sensors/filesystem.py", line 99, in execute
+    super().execute(context=context)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/sensors/base.py", line 281, in execute
+    raise AirflowSensorTimeout(message)
+airflow.exceptions.AirflowSensorTimeout: Sensor has timed out; run duration of 3601.2213675989988 seconds exceeds the specified timeout of 3600.0.
+[2025-09-06T08:43:46.788+0000] {taskinstance.py:1206} INFO - Immediate failure requested. Marking task as FAILED. dag_id=load_customers_to_postgres, task_id=wait_for_csv, run_id=manual__2025-09-06T07:43:43.092994+00:00, execution_date=20250906T074343, start_date=20250906T074345, end_date=20250906T084346
+[2025-09-06T08:43:46.808+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 3 for task wait_for_csv (Sensor has timed out; run duration of 3601.2213675989988 seconds exceeds the specified timeout of 3600.0.; 187)
+[2025-09-06T08:43:46.832+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2025-09-06T08:43:46.864+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-09-06T08:43:46.867+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

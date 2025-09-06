@@ -1,0 +1,7 @@
+AIRFLOW_UID=50000
+# Generate a real Fernet key in bash if you like:
+# python - <<'PY'
+from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())
+PY
+FERNET_KEY=YHcuO7mUQH1ZbQqjWw9x2h4-_placeholder_do_not_use_in_prod_
+AIRFLOW_CONN_POSTGRES_DEFAULT=postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
