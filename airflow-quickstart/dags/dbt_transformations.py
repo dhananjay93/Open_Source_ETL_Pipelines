@@ -13,7 +13,6 @@ with DAG(
     dag_id="dbt_transformations",
     description="Run dbt deps → run → test for the mounted dbt project",
     start_date=datetime(2025, 9, 1),
-    schedule="@hourly", 
     catchup=False,
     tags=["dbt", "silver", "gold"],
 ) as dag:

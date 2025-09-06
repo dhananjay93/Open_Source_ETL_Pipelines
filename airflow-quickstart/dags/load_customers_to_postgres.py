@@ -24,7 +24,7 @@ DEFAULT_ARGS = {
 with DAG(
     dag_id="load_customers_to_postgres",
     start_date=datetime(2025, 9, 1),
-    schedule_interval=None,  
+    schedule_interval="@hourly",  
     catchup=False,
     default_args=DEFAULT_ARGS,
     tags=["bronze", "ingest", "postgres"],
